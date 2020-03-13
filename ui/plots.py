@@ -480,7 +480,7 @@ class MyHistogram(MyPlot):
             self.stackedDraw(self.model.stackedDataCol(self.field,True,"black"),1)
 
         if edges is not None and self.mu is not None:
-            y=matplotlib.mlab.normpdf(np.array(edges),self.mu,self.sigma)
+            y=norm.pdf(np.array(edges),self.mu,self.sigma)
             self.plt.plot(edges,y/np.max(y)*self.plt.get_ylim()[1]*0.95,'r',linewidth=2)
             title += fmt % (self.mu,self.sigma)
 
